@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 
 export default function App() {
   console.log('App executed');
@@ -9,11 +9,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text numberOfLines={1} onPress={handled}>Hello React Native</Text>
-      <Image fadeDuration={1000} source={{
-        uri: "https://picsum.photos/200/300",
-        width: 200,
-        height: 300,
-      }} />
+      <TouchableHighlight onPress={() => console.log('Tap on image')}>
+
+        <Image fadeDuration={1000} source={{
+          uri: "https://picsum.photos/200/300",
+          width: 200,
+          height: 300,
+        }} />
+
+      </TouchableHighlight>
       <StatusBar style="auto" />
     </View>
   );
