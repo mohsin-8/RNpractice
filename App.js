@@ -4,10 +4,11 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   console.log('App executed');
+  const handled = () => console.log('Text pressed');
 
   return (
     <View style={styles.container}>
-      <Text>Hello World Mohsin</Text>
+      <Text numberOfLines={1} onPress={handled}>Hello World Mohsin Heloo Again my name is Mohsin This is line number two can you change the code ?</Text>
       <StatusBar style="auto" />
     </View>
   );
