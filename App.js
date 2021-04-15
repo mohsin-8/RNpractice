@@ -1,24 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Button, Alert } from 'react-native';
 
 export default function App() {
-  console.log('App executed');
-  const handled = () => console.log('Text pressed');
-  // console.log(require("./assets/icon.png"))
+
   return (
     <View style={styles.container}>
-      <Text numberOfLines={1} onPress={handled}>Hello React Native</Text>
-      <TouchableHighlight onPress={() => console.log('Tap on image')}>
-
-        <Image fadeDuration={1000} source={{
-          uri: "https://picsum.photos/200/300",
-          width: 200,
-          height: 300,
-        }} />
-
-      </TouchableHighlight>
-      <StatusBar style="auto" />
+      <Button
+        color="orange"
+        title="Click Here"
+        onPress={() => Alert.alert("Your form", "Successfully Submit", [
+          { text: 'Yes', onPress: () => console.log("Yes") },
+          { text: 'No', onPress: () => console.log("No") }
+        ])} />
     </View>
   );
 }
